@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+</head>
+<body>
+<form>
+   이름 : <input type="text"><br>
+   나이 : <input type="text"><br>
+   패스워드 : <input type="password">
+    <p>
+    
+    개인정보 : <input type="radio" name="info" checked>공개
+    <input type="radio" name="info">비공개
+    취미 : <input type="checkbox" name="hobby1" checked>등산
+    <input type="checkbox" name="hobby2">독서
+    <input type="checkbox" name="hobby3"checked>영화감상
+    <input type="checkbox" name="hobby4">음악감상
+    <p>
+
+    이메일 : <input type="text"> @
+    <select>
+        <option>선택</option>
+        <option>naver.com</option>
+        <option>daum.net</option>
+        <option>gmail.com</option>
+        <option>직접입력</option>
+    </select>
+    <p>
+    내용 : 
+    <br>
+    <textarea rows="5" cols="60">
+    안녕하세요~~ 텍스트박스입니다.
+    </textarea>
+
+    <br>
+    <button type="button">검색</button>
+    <button type="submit">확인</button>
+    <button type="reset">되돌리기</button>
+    <br>
+    파일첨부 : <input type="file">*2MB까지 가능
+    <br>
+
+    <input type="color"><br>
+    <input type="datetime-local"><br>
+    <input type="month"><br>
+    <input type="number"><br>
+    <input type="range"><br>
+    <input type="time"><br>
+    <input type="week"><br>
+</form>
+</body>
+</html>
