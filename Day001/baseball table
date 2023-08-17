@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table, th, tr, td {
+            border:solid 1px black;
+            border-collapse: collapse;
+            padding:8px;
+        }
+    </style>
+
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th colspan="7">2023 KBO리그 팀순위</th>
+        </tr>
+        <tr>
+            <th>팀명</th>
+            <th>경기</th>
+            <th>승</th>
+            <th>무</th>
+            <th>패</th>
+            <th>승률</th>
+            <th>게임차</th>
+        </tr>
+        <tr>
+            <td>1 <img src="/html/img/lg.jpg" width = 20 >LG</td>
+            <td>100</td>
+            <td>62</td>
+            <td>2</td>
+            <td>36</td>
+            <td>0.633</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>2 <img src="/html/img/ssg.png" width = 20 >SSG</td>
+            <td>99</td>
+            <td>55</td>
+            <td>1</td>
+            <td>43</td>
+            <td>0.561</td>
+            <td>0.0</td>
+        </tr>
+        <tr>
+            <td>3 <img src="/html/img/kt.png" width = 20 >KT</td>
+            <td>102</td>
+            <td>55</td>
+            <td>2</td>
+            <td>45</td>
+            <td>0.550</td>
+            <td>8.0</td>
+        </tr>
+        <tr>
+            <td>4 <img src="/html/img/nc.png" width = 20 >NC</td>
+            <td>99</td>
+            <td>50</td>
+            <td>2</td>
+            <td>47</td>
+            <td>0.515</td>
+            <td>11.5</td>
+        </tr>
+        <tr>
+            <td>5 <img src="/html/img/doosan.png" width = 20 >두산</td>
+            <td>99</td>
+            <td>49</td>
+            <td>1</td>
+            <td>49</td>
+            <td>0.500</td>
+            <td>13.0</td>
+        </tr>
+        <tr>
+            <td>6 <img src="/html/img/kia.png" width = 20 >KIA</td>
+            <td>95</td>
+            <td>46</td>
+            <td>2</td>
+            <td>47</td>
+            <td>0.495</td>
+            <td>13.5</td>
+        </tr>
+        <tr>
+            <td>7 <img src="/html/img/lotte.png" width = 20 >롯데</td>
+            <td>100</td>
+            <td>49</td>
+            <td>0</td>
+            <td>51</td>
+            <td>0.490</td>
+            <td>14.0</td>
+        </tr>
+        <tr>
+            <td>8 <img src="/html/img/hanhwa.png" width = 20 >한화</td>
+            <td>99</td>
+            <td>41</td>
+            <td>6</td>
+            <td>52</td>
+            <td>0.441</td>
+            <td>18.5</td>
+        </tr>
+        <tr>
+            <td>9 <img src="/html/img/samsung.png" width = 20 >삼성</td>
+            <td>102</td>
+            <td>42</td>
+            <td>1</td>
+            <td>59</td>
+            <td>0.416</td>
+            <td>21.5</td>
+        </tr>
+        <tr>
+            <td>10 <img src="/html/img/kium.png" width = 20 >키움</td>
+            <td>109</td>
+            <td>43</td>
+            <td>3</td>
+            <td>63</td>
+            <td>0.406</td>
+            <td>23.0</td>
+        </tr>
+     </table>
+</body>
+</html>
