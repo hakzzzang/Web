@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="/html/img/haksu.jpg" width="300" title="안녕하세요. 김학수라고합니다.">
+
+    <img src="/html/img/Newjeans.jpg" width="300" title="안녕하세요. 뉴진스입니다.">
+
+    <audio src="/html/audio/jaypark.mp3"autoplay controls loop></audio>
+
+    <video width="320" height="240" controls autoplay>
+    <source src="/html/video/다이빙.mp4" type="video/mp4">
+</video>
+</body>
+
+</html>
