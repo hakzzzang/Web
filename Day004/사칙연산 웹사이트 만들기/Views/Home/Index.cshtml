@@ -1,0 +1,25 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>두 정수를 넣어주세요.</h2>
+
+<form method="post">
+    <label for="number1">숫자 1:</label>
+    <input type="number" id="number1" name="number1" required />
+    <br />
+    <label for="number2">숫자 2:</label>
+    <input type="number" id="number2" name="number2" required />
+    <br />
+    <input type="submit" value="Calculate" />
+</form>
+
+@if (ViewBag.Result1 != null)
+{
+    <h3>Result: @ViewBag.result1</h3>
+    <h3>Result: @ViewBag.result2</h3>
+    <h3>Result: @ViewBag.result3</h3>
+    <h3>Result: @ViewBag.result4</h3>
+}
+
