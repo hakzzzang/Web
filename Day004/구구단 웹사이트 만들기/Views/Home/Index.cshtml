@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<h1>현재 시간은 @DateTime.Now</h1>
+<h1>올해 연도는 @DateTime.Now.Year</h1>
+
+@{
+    var name = "홍길동";
+    var age = 20;
+}
+<h2>이름 : @name</h2>
+<h2>나이 : @age</h2>
+
+@{
+    for(int i = 1; i < 6; i++)
+    {
+        <span>@i   </span>
+    }
+}
+
+@{
+    string[] fruits = { "사과", "배", "딸기" };
+    foreach(var items in fruits)
+    {
+        <h3>@items</h3>
+    }
+}
+
