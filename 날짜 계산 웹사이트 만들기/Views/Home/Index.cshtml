@@ -1,0 +1,23 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>두 날짜를 넣어주세요.</h2>
+
+ <form method="post">
+    <label for="date1">만난 날짜 :</label>
+    <input type="date" id="date1" name="date1" required />
+    <br />
+    <label for="date2">특정 날짜 :</label>
+    <input type="date" id="date2" name="date2" required />
+    <br />
+    <input type="submit" value="Calculate" />
+</form>
+
+
+@if (ViewBag.Result1 != null)
+{
+    <h3>만난 날이 @ViewBag.result1 일 되는 날입니다</h3>
+
+}  
