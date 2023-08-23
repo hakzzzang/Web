@@ -1,0 +1,27 @@
+﻿﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+
+<h1>환율 계산기</h1>
+
+
+<div>
+    <form method="post" action="/Home">
+        <label for="str1">금액:</label>
+        <input type="number" class="form-control" id="money" name="money" value=0 required />
+        <br />
+        <input type="submit" class="btn btn-info" value="계산" />
+    </form>
+</div>
+
+@if (ViewBag.Result1 != null)
+{
+    <h3>미국 USD : @ViewBag.Result1 USD</h3>
+    <h3>유럽 EUR : @ViewBag.Result2 EUR</h3>
+    <h3>일본 JPY : @ViewBag.Result3 JPY</h3>
+    <h3>중국 CNY : @ViewBag.Result4 CNY</h3>
+}
