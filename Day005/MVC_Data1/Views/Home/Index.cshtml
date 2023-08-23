@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+
+<h1>Main Page</h1>
+
+
+<div>
+    <form method="post" action="/Home/Result">
+        <label for="str1">문자열 1:</label>
+        <input type="text" class="form-control" id="v1" name="v1" value="ABC" required />
+        <br />
+        <label for="str2">문자열 2:</label>
+        <input type="text" class="form-control" id="v2" name="v2" value="DEF" required />
+        <br />
+        <input type="submit" class="btn btn-info" value="계산" />
+    </form>
+</div>
