@@ -1,0 +1,28 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var car = ViewData["data1"] as List<carClass>;
+}
+<style>
+    table, th, tr, td {
+        border:solid 1px black;
+        border-collapse: collapse;
+        padding:8px;
+    }
+</style>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>이름</th>
+        <th>스피드</th>
+    </tr>
+
+    @foreach(var item in car)
+    {
+        <tr>
+            <th>@item.ID</th>
+            <th>@item.Name</th>
+            <th>@item.Speed</th>
+        </tr>
+    }
+</table>
