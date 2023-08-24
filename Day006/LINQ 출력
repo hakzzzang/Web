@@ -1,0 +1,32 @@
+using System.Net.Cache;
+
+namespace LINQ_Console_App02
+{
+    class Profile
+    {
+        public string Name { get; set; }  
+
+        public int Age { get; set; }
+    }
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Profile[] profile =
+            {
+                new Profile { Name="김학수", Age=25},
+                new Profile { Name="홍승현", Age=54 },
+                new Profile { Name="김민규", Age=13 },
+                new Profile { Name="오동용", Age= 73},
+                new Profile { Name="안병길", Age= 36}
+            };
+
+            var Profiles = from p in profile where p.Age >= 30 orderby p.Age descending select p;
+
+            foreach (var p in Profiles)
+            {
+                Console.WriteLine(p.Name + "   " + p.Age);
+            }
+        }
+    }
+}
