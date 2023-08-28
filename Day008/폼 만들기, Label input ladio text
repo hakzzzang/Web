@@ -1,0 +1,67 @@
+@model TagHelpers_Form01.Models.Student
+@{
+
+
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+<div class="container">
+
+    <div class="col-sm-4">
+        <form method="get" action="./">
+            <label asp-for="Name">이름:</label>
+            <input asp-for="Name" 
+                    placeholder="이름을 입력하세요." 
+                    class="form-control"/>
+            <br />
+
+            <label asp-for="Gender">성별:</label>
+            <select asp-for="Gender" 
+                    class="form-control"
+                    asp-items="Html.GetEnumSelectList<Gender>()">
+                        <option value="">성별을 입력해 주세요.</option>
+
+            </select>
+            <br />
+
+            <label asp-for="Age">나이:</label>
+            <input asp-for="Age"
+                    placeholder="나이를 입력하세요."
+                    class="form-control"/>
+            <br />
+            <label asp-for="Hp">연락처:</label>
+            <input asp-for="Hp"
+                    placeholder="연락처를 입력하세요."
+                    class="form-control"/>
+
+            <br />
+            <label asp-for="IsEmployed">취업 여부:</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="IsEmployed" value="취업중" checked>
+                <label class="form-check-label" for="flexRadioDefault1">
+                    취업
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" asp-for="IsEmployed" value="미취업" >
+                <label class="form-check-label" for="flexRadioDefault2">
+                    미취업
+                </label>
+            </div>
+            <br />
+            <textarea asp-for="Description" rows="5" cols="60" placeholder="할 말이 있다면 적어주세요."></textarea>
+            <br />
+
+            <input type="submit" value="OK"
+                class="btn btn-outline-primary" />
+
+        </form>
+    </div>
+
+</div>
