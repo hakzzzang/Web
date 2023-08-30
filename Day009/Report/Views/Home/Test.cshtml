@@ -1,0 +1,74 @@
+﻿
+@{
+    ViewData["Title"] = "Test";
+}
+
+<h1>Test</h1>
+<h2>Front-End 프로그래밍을 열심히 해봅시다.</h2>
+<h2 class="Item">ASP.NET을 공부하고 있습니다.</h2>
+<h2 id="temp">EntityFramework도 공부합시다.</h2>
+@* 
+<script>
+    alert("Hello Front-End Programming!")
+</script> *@
+
+<script src="https://code.jquery.com/jquery-1.10.2.js">
+</script>
+
+
+<script>
+
+    $(document).ready(function () {
+        $('*').css('color', 'red');
+    });
+</script>
+
+<script>
+
+    $(document).ready(function () {
+        $('h2#temp').css('color', 'yellow');
+    });
+</script>
+
+<script>
+
+    $(document).ready(function () {
+        $('h2.Item').css('color', 'blue');
+    });
+</script>
+
+<script>
+
+    $(document).ready(function () {
+        $('tr:odd').css('background', 'purple');
+        $('tr:even').css('background', '#CCCCCC');
+        $('tr:first').css('background', '#000000');
+    });
+</script>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Hp</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>홍길동</td>
+        <td>20</td>
+        <td>010-1111-1111</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>이순신</td>
+        <td>40</td>
+        <td>010-2222-2222</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>강감찬</td>
+        <td>50</td>
+        <td>010-3333-3333</td>
+    </tr>
+</table>
