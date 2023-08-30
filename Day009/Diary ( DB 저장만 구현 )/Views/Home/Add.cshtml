@@ -1,0 +1,44 @@
+﻿@model Diary
+@{
+    ViewData["Title"] = "Add";
+}
+<h1>Add</h1>
+<hr />
+<div class="row">
+    <div>
+        <form asp-action="Add">
+
+            <div class="row">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="col">
+                    <label asp-for="No" class="control-label"></label>
+                    <input asp-for="No" class="form-control" />
+
+                    <label asp-for="Writer" class="control-label"></label>
+                    <input type="text" asp-for="Writer" class="form-control" />
+                </div>
+            </div>
+            <br />
+            <label>오늘의 일기</label>
+            <textarea asp-for="Contents"
+                      rows="25" class="form-control">
+                </textarea>
+            <br />
+
+            <br />
+            <div class="d-grid gap-2">
+                <button class="btn btn-primary" type="submit" value="submit">저장</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="submit">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
