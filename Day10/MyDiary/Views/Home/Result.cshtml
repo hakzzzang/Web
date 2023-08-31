@@ -1,0 +1,21 @@
+﻿@model WebAppDiary.Models.DiaryClass
+
+@{
+    ViewData["Title"] = "Result";
+}
+
+<h1> 일기가 성공적으로 입력되었습니다!!!</h1>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>일기 결과</title>
+</head>
+<body>
+    <h1>입력 내용 </h1>
+    <p>일기 작성자:@Model.Writer </p>
+    <p>일기 제목:@Model.Title</p>
+    <p>내용:@Model.Contents</p>
+    <p>작성 날짜:@Model.DateTime</p>
+</body>
+</html>
