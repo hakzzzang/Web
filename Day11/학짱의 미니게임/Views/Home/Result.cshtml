@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "게임 결과";
+}
+
+<div class="text-center">
+    <h1 class="display-4">게임 결과</h1>
+</div>
+<br />
+<div class="container">
+    <p>입력한 높이: @ViewBag.Result.Length</p>
+
+    @foreach (string row in ViewBag.Result)
+    {
+        <h2>@row</h2>
+    }
+</div>

@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">학짱의 미니 게임</h1>
+</div>
+<br />
+<div class="container">
+    <form method="get" asp-action="Result" class="custom-form">
+      <h2>삼각형 그리기 게임</h2>
+      <br />
+      <label>높이를 입력해주세요 : </label>
+      <input name="size1" id="size1"  type="number" />
+      <input type = "submit" value="만들기" class="btn btn-outline-success" />
+    </form>
+</div>
+
+
+<br />
+<br />
+
+<div class="container">
+    <form method="get" asp-action="snailResult" class="custom-form">
+        <h2>달팽이 배열 그리기 게임</h2>
+        <br />
+        <label>높이를 입력해주세요 : </label>
+        <select name="snailSize" id="snaliSize">
+            <option value="3">3</option>
+            <option value="5">5</option>
+            <option value="7">7</option>
+            
+        </select>
+        <input type="submit" value="만들기" class="btn btn-outline-success" />
+    </form>
+</div>

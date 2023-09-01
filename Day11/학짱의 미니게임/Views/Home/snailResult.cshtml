@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Snail Result";
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        max-width: 500px;
+        margin-top: 20px;
+        border: 2px solid #333;
+    }
+
+    th, td {
+        border: 1px solid #333;
+        padding: 8px;
+        text-align: center;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    tr:nth-child(odd) {
+        background-color: #fff;
+    }
+</style>
+
+<h2>Snail Result</h2>
+
+<p>Snail Size: @ViewBag.snailResult</p>
+
+@if (ViewBag.snail != null)
+{
+    <table>
+        @for (int i = 0; i < ViewBag.snail.Length; i++)
+        {
+            <tr>
+                @for (int j = 0; j < ViewBag.snail[i].Length; j++)
+                {
+                    <td>@ViewBag.snail[i][j]</td>
+                }
+            </tr>
+        }
+    </table>
+}
