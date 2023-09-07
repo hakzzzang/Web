@@ -1,0 +1,214 @@
+﻿@model IEnumerable<Corporation>
+@{
+    ViewData["Title"] = "Corporation";
+}
+<style>
+    h1{
+        font-family:'Hakgyoansim Wooju';
+        font-display:auto;
+        font-synthesis-style:auto;
+    }
+    table{
+        font-family:'Hakgyoansim Wooju';
+        font-size:large;
+        text-align:center;
+    }
+</style>
+<h1 class="fw-bolder text-primary text-center">기업 조회</h1>
+<form asp-controller="Home" asp-action="Corporation">
+    <p>
+            <span>
+                <button type="submit" class="btn btn-secondary float-end">
+                    <span>검색</span>
+                </button>
+            </span>
+            <input class="form-control-sm float-end" type="text" list="Coparation" name="searchString" placeholder="회사를 검색하세요."/>
+            <datalist id="Coparation">
+                <option value="LG 에너지 솔루션"></option>
+                <option value="삼성전자"></option>
+                <option value="현대자동차"></option>
+                <option value="우아한형제들"></option>
+                <option value="SK 하이닉스"></option>
+                <option value="카카오"></option>
+                <option value="한국전력공사"></option>
+                <option value="기아"></option>
+                <option value="쿠팡"></option>
+                <option value="농심"></option>
+                <option value="빙그레"></option>
+                <option value="아모레퍼시픽"></option>
+                <option value="토스"></option>
+            </datalist>
+    </p>
+</form>
+<br />
+<br />
+<div class="table-responsive-lg">
+    <table class="table table-sm table-bordered border-dark">
+    <thead class="table-light">
+        <tr>
+            <th class="align-middle">
+                번호
+            </th>
+            <th class="align-middle">
+                기업
+            </th>
+            <th class="align-middle">
+                계열
+            </th class="align-middle">
+            <th><a asp-action="ResumeWrite" class="btn btn-info">이력서 쓰기</a></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr class="table-light">
+                <td class="align-middle">
+                    @item.No
+                </td>
+                <td class="align-middle">
+                    @{
+                            if(item.No == 1)
+                            {
+                                <img width="40" height="40" class="img-thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC0klEQVR4AX1TA5RdQQzNemvbtm1b69q2bdu2bfPzvd92bdvWcXmb1M4547k3N5kJ/W6qhUNXA/W7rKVuQVrqkqiY2cep1o4m1cpxrWrpWJb+ZaqVU3GFBt3TUIePHvUnIXLhCSTsu4VXJUfAaDYQqqUDmCBVtXKY/BewY3ED9ffXFeiF5FOPkfnMDRGzDyPAaS1MBVygmNkJWEikfeT7K36ALR3MFLNBDwScpfNC2ITdeEQNoKGOeEHtYaQBUK2dIATSGCzjW8Z1+xZzF778Mfn0E4SN3wND8b6IWXkBSiE7BAxcDfdqEzkEIflK8EOJDzdLUqjfVfe6k5H93APiOXbDVYh5tpuCxKO34N97BQzUGyYrZwaxEotvShzes5q2pKWuIVGLTiBi5hGI5JfFhiFw0BporDsh6cR9+HZZAg114tYZWh6lyVoxt5dwFgpBYsKum/AfuAJ69iQJ01J3uYSk0w/h2WQmfDosQNotDZJOPUDy2UeI33MDpvwuUM0H7RWCuNjNVxDovEGAkjCRy/POTPAA3m3n41WJofDvuQK+nZbAs/l05LoGwq3CeCg0YAvpqbtryLBtiNt5nUNo9z1WIUi58BiezWZAw/sG6gsd9YTetgcy7r+E0XYAK3AYQ4q53Ual0ADkvAyAUsxOLsJk6SwhIH7vDeS+DkYQqzOY9cdzao3IZScQt+6SOMjlZFaUT1SOF1lBQzciW+OFF9YdxBMUsoNa0AVebebAtexYPKUWPJ+FXFMADAX6Sq4u0DdjyVNEfsT8o8jWecOjzQzobXpBVDyjVjDk74eIxUeQqwbgZbkh8qwx8nt/KyLHDS+o4zvvlrORdkWH9IcKko48ROq5Z8h86oaY9ZdgZCId9Yph6bUE87dK7GugPn466vb+ZZGh8Kw7He5VJkESxpWZzbLP8e8rRf8zZjdnol4K2Z/mstZwLTzibK9mYGX6i30CEy3m2uwZykIAAAAASUVORK5CYII="/>
+                            }
+                            else if(item.No == 2)
+                            {
+                                <img class="img-thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAV1BMVEVHcEwAiv8Aiv8Aiv8Aiv8Aiv8Aiv8Aiv8Aiv8Aiv8Aiv8Aiv8Ahf8Agf9xtf+BvP9YqP+83P/////1/P/j8v8wmP+Zyf/T6f8Aiv8Aj/+x1P8Aiv8Aiv935Us3AAAAHXRSTlMAPk95gpJrGuX/tCr////////////////S///1FfuwPiAAAAEKSURBVHgBlZMHEoMwDATpIGKBK/3/7wxGI0ZMKptCuXW3kzukWV6UZVlUWZ28kjcgadNrXMILzUPkorSg+pgz2Wv9akcYCQEMQtf3vcbTKan/Z3FjD5w+jUsP0FsmsJCKFpSO0dA7a61Roo2UhWFPRsT+uAAx7UImBY+q894bFhrRR9XbaASMyIEWwIazETPLmbhMUyDDDvhBUEATwX0UAoNhtJEFX/rAYGcjUqg4GmkejvmagVjFPKCh1jEKICaqlhNlNV24iVaudrAnBuWmarmKjnMPzBaFFNgIi3fOjT3KLsgtqRRGFDApCQ94hbtIVC8RTwKTfS7/8WhN1L4gLduGsnVqqy35lyeB0yJGQOZ7lAAAAABJRU5ErkJggg=="/>
+                            }
+                            else if(item.No == 3)
+                            {
+                                <img class="img-thumbnail" src="data:image/png;base64,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"/>
+                            }
+                            else if(item.No == 4)
+                            {
+                                <img class="img-thumbnail" src="data:image/png;base64,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"/>
+                            }
+                            else if(item.No == 5)
+                            {
+                                <img width="40" height="40" class="img-thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABhklEQVR4AaSRM0C2URiGz28tv207L3Fqn3ItuaaWbJtbTdm27S3b7mN2p/tkc7henud6RCilV4JwXZ9ngGygzHV/fv0ygmhAOS7PKdf7We2k1UuxiwrsAeV6PKeTZq8ae97/De8gEhYXERgDyvV6NtP383dwO5GiHUSc4XdegRpg5U/3/fkV004kdwQMvfMIFLcFdFTjQyrKH94nGAS1IA5ogY/HCX6DFWyATtq+rOi6J8okLLgcJAO6jwX8Y/9F9wseYQN8ruczOmn+qrzzjlg9DghwWKyTiPcyGZjZhtP1SLR9UOZ7CMfpheaO4C7oRgXN/X9/eXUQySYEKwBFPNO+X7/jx/TfFYzpvC8eN3qbzXF4UYl257hum6sPI8yCly8wPuh+/P86stxi33CP7bwpLpwweRPEC3hKEYRNAQSymXFcn/fhbnPidCGQwzzaMJcoVMeCdugFJuARO3fqirruiFlw7F72bQvqgO5O4A6nCkY2FqpgAHTyAWhaYcamhtLcSLkBAEJth9fjmHICAAAAAElFTkSuQmCC"/>
+                            }
+                            else if(item.No == 6)
+                            {
+                                <img class="img-thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAUVBMVEX/3AB2aRI1MRu9pAkeHh6/pgglJB3CqQjvzwLlxgQoJh1fVRX00wEiIh1kWRWnkQzfwQSSgA/VuAYuKxxrXxSLehC1nQpaURY4NBpHQBlLRBhgJo0mAAAAbUlEQVR4Ad2QNQLCUABDv7y6u9z/nvhIwwS0zRw3Z4N1XhMg0ISQ6FeE+AMhSbNcEhyFJJSQqIiK7aohgamhESvavKNXMxNLKH+oa7D6KA+NfnKAUT85Qauvnkk3nnqZxynLe0I5Pb2DtTZnwxVYrQOsjOUZ7gAAAABJRU5ErkJggg=="/>
+                            }
+                            else if(item.No == 7)
+                            {
+                                <img width="50" height="50" class="img-thumbnail" src="https://i.namu.wiki/i/hjp9uqjiydMxKMKK8wmVJNtK5wdpM89xai28rCS7264PMEiA4aU1g3cPl32MvBXKcZ-OOTs8ayTaLTAC5OXernUAv_-Tmkdo9T4xM-NHT0kpeD98CXOEEyRwtd3BT4o6_lKBylbIVApLeKOKDSnrPA.svg"/>
+                            }
+                            else if(item.No == 8)
+                            {
+                                <img class="img-thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACw0lEQVR4AeyUA3QkURAA92zbtm3btm3btm3biJOzbZuxnSzqpmM/BKetses3RhUIUAbYA1gBWmIeHWADHAIqqUICNAHeEHd8AtoGfrws8Jq4RySqi8Bufh+nROAnvw8XEdDyG1ERAr2AXkAv4OLqxtsPH4mKn1bWGJhYcPKcIWcMTThtYMJ5E3Ps7B2ICrVaw72Hj5X7jTlrZIql8p4gAa1Ox+37D2nTvT8jJs4gIjy9vDh6+hwV6zYjbZ5i9Bw0itrN25MoYx5SZC+kyJhGKT1l7mIyFyxNksz5kGX3gaPBApeu3SRn8YqoUmZlwKgJhESnyD14/IxuA4aTUvlQhTpNOXrqHO4eHvQaPBpVmuwkyZSXE2cNCYuvWo1Eq3L9FohkurzFSZghNwnS52LbngPBAlt3HyB+upzKy3IwcNREArGytmH+8jUiR8ochZi5cHlQ6ESs5+BR8oyMKJzAl2/fGT1lFqlzFaFY5TrsP3KSHoNGEi9tjgCBg8ECciAnVSIweiJeXt7yQjEnYfrc8hBpchdl5/4j8uEoBbx9fDh+xoAyNRuJNIPGTOL9x88IMji5XwYrgw4hcEAE5AL1W3US06Bwr9q4TUQk1GTMX5JdB46i1epEQOpAzgcJfPryTRnAJHmWsjUbKecMRIhABigCkuYshcpgfulqsMDug0dJmiW/LCRTluxFy0u4+fHTCuHR0+ciIQVH1sJl2X/0pEgwYOQEyankl95DRlNeEU6v5HnMlNlKCn4QlqHjp9KoXTepOTQabbCA5NrA1ILzxuacMzbj6fOXyge0hOTDp89Iu0kLXbt5B7VazcvXbzlnZIacl620pXSTj68vEfH81RscHJ30f8JwAnoBvYD2dwtY8/twE4GD/D4MRKAy8IG45ztQVyUAbYEvxB0/gW6qkADVgNOAK7GHO/BrW0A+B2JGkL0AKMqnBpJmH20AAAAASUVORK5CYII="/>
+                            }
+                            else if(item.No == 9)
+                            {
+                                <img class="img-thumbnail" src="data:image/png;base64,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"/>
+                            }
+                            else if(item.No == 10)
+                            {
+                                <img class="img-thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAdVBMVEX4+PjtHCT////sAAD5///4/PztDhntEhzzpKb209TtAAz47u7tGCD34eLsAAbxfH/vWFztABHwaGzuMzntJCvylZj/+Pj5v8D0ubrxgIP2n6HvUVXuKjHyc3bwXmL1kZP6ycv96+v4tbbzqqzuPkP33N32ztDrET/rAAABEUlEQVQ4jdWS2XaDMAxEEbJlFmMwJCxN0uz9/08sWEAcp+lrT/XAQTPXY2MURf+spBBCuscbu0jqxphNtU1/QkRaYYbbNu5Mhk0fIlIOqMB8xGOlCBp3eUDsDIDex64OBEBQ+IT4tABgjwyccGwUeBniOklgOgZy19laPBKsniQ8MdA6ADBdImTPiukZOHNL5RIhSmJlYKAzrtXNClSKFWJgbgFlAIAtJ//CO/jAgWbJ1On9uPgali3kNZs1IES7vq/fKfNl0VNht96UGLJXX928i4r2KvQ13r2fIc9Aod/5AeMxbqg939LXkz/NU0JIjtEqwyEch+mkUV8DjmWrJBcvNqeItihy+W5qGfrF+7P6BiWkCz6Xpy2GAAAAAElFTkSuQmCC"/>
+                            }
+                            else if(item.No == 11)
+                            {
+                                <img class="img-thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACF0lEQVR4Ad3XA8weQRDG8att221Q2zaD2rYb1g1qM6jNuGFt27ZtT/9JLpsvl9ubrZHk93Ln5jnfeiIS60/6PwM8zpq3ALpgEQ7jMQRPsR9jkMEtgHvTYpiEixAHj1HK+8GmCdABh2Ms9DXE0X7vBxr3wW0ItqKM/18cDMBHiOKj9x3NqwU28zLECRk3BaJ46Il742SYF1jAGsSxjK8BUazzXA+wkIPrIBJE1NSBKEp5Ds074W2g8CVyKXUjlOYj1NOQQRMsxX0cdtddiMWYiAuROZIXWIpPIs53Br+JBuqV0L+CiUUDpXkTS+NBSKZeihk0DmJxUGneKOR4+Yx6yKbeCxjUBhKhg6VxGsyAKE5adwF/5MNLiMV9JAhpXgEPIY4+o0ZYgO1K4bKITV8IVyGONpgA/gKaQRRdHG7BbyEOjgYDnIQo8jhctOZBHGw0AfhSzuWmoTV3u/waQ0wAx7vWZscAJSCK10gXM8BuiGKKY4AOEMUoU+MHuA9RdHMMMEtZzl4kCAb4DFHUcWgeT7kBXTSbPhDgKURRTgmgncqHkSVQYwLshChKKM2T4LKldh2ShNSZAP0gilqmyP3u+RitIupMgAQ4qwQYE7Hf51nWOoPzzIjBeZRr+XOUCTSvgsOBcTtRTW1suRumwhy8h4R4j3WYhO2BcAvUA9XQH0jSoRdW4SCu+k1e4zZOYx2GoQYS/NOz46+Yt/T6bCbNcgAAAABJRU5ErkJggg=="/>
+                            }
+                            else if(item.No == 12)
+                            {
+                                <img class="img-thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAolBMVEUuOYItOIEvOoIxPIMmMX0rNn8pNH8hLHocJnhTWZc2QYdETZBnbaNvc6hiaaGMkrlNVJY0QIqEiLV5fK0wOYXZ2eU1PYctOID///9cYJ5yd6moqMhMT5XKy9u6v9W1ts+cnsPk5Onq7O0OGXHT1OMWIHeXmLnHyNwpMYK1uNF+f60LEG8QHHCOkLwoM3w8R5ImMXlsecpMV6dcaLpBTZxTYLFzCtV3AAABeklEQVR4AWIYQQDA41RgWQzCwBIohLq7u9//ePtp31uIy2SIEqLsT1X4xeS/+FoAolGV0V8A6lOqWmoFmK5pXAAIXQOBjHLBuC4QgcCLoEuDcNNi3DZ04bgemo5j+lYQMvjgozhJMch4nnlEFmUcVrVd200QMFAnQBSt7WPXB8VgF+2IxmQ387S0GH3sKK5rbc1rHm9O2TnMxG7pa1cOUykUArAqNu19m+auSJqlHHGrjybwZXu+JH8AZXdp9d0gwDZ5a3tMd1Xnk93fH0nguUmYdCQDjTvGFpQOmuHsyLs8XpIExAMpYyoBoaeIArigjP2xRBUGAMIwLEgOQPvFvP+/RgpM6t4gIgVgGVu2iHZvGuQyZ0hjeZv/LZTaei8iUutJduznJGkb6VuM3d6bUzRr3QiYc4KsczhBVG6YXJo02ubyYh9zRPD7W5ZtG5nFCDC/NbVQbZ4JYT0DGMY0MARMU2gK/23rxcczBAFhwLgg/4OVQBCqgmECAHdoHdVfw11MAAAAAElFTkSuQmCC"/>
+                            }
+                            else if(item.No == 13)
+                            {
+                                <img class="img-thumbnail" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAq1BMVEVHcEw8i/NIn/dNqfY8hvZBkfhGnfhKpPhNqvg2ffdAkfhFmvhHn/gsafNClvdClPghUfRLo/xBkfgeTfE/jvc9ifchUe1Infcyc/YwcPMpYPQ6hfcnXfA0ePY4gfcqY/UoYvUhUegvbvYjVfdBkvcrZ/YubfRFnPg4f/cmXPYiUvUgUPUiVfYcSPUeS/UXP+oZQfMcSOYbRPUfTfUxdfcua+pAkvcrZusjV+27cgr3AAAAOXRSTlMADU2Pjb3t////f///4+X/whv/rv//f2n/vkD//f//liL//1ff/zKq///m///////////fx2XR/+eoe7t1AAABWklEQVR4AWKgOmBkYmYBtEZW2xXCUBSs4VxLCS7X3ZX//7Luc5Aa9KnzOpNNVvjLKqqmG63aVC3L1vROi3/p9noIdL3fqAeKEIID+735uOM4CPAF6TZ4T0hZBX6ggLfw+at3ZISCAl2Pk9QwEpAN630RAQ40XRslvj9mOpPyftMoTSOaoMAazWriOQcLmS6XSBDgCtFo9cn6mQZEtFwaSCIpEPibLcPBNqQbytQgUDj4RLzb7zegyFwESrQ0EsJYyp5mjw7HHTWcbDIO2PuURLY4HQ7Hc5Vs3DrwmUQYCKoCzBGYFECOid6Yg6q48DPIZR3MrLgMzhwUL2WmRlL6mTX6ulD9V3NZLsx8eTqd4IvgUv+M4bWcMBJ4GqBgTb5ObllwvQb3By9A7+j8bxYjeFj4Pvxv7ghOpPFCjUQI9gDHGxkko9Nov+mHjRbMH6NRnkG38ezesP3ffADvU0Bwoi4VLQAAAABJRU5ErkJggg=="/>
+                            }
+                        }
+                    @item.CorporationName
+                </td>
+                <td class="align-middle">
+                    @item.Line
+                </td class="align-middle">
+                <td>
+                    @{
+                        if (item.No == 1)
+                        {
+                                <a href="https://www.lgensol.com/kr/index" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://www.lgensol.com/kr/career-recruit" target="_blank" class="btn btn-secondary">채용정보</a>
+                                
+                        }
+                        else if (item.No == 2)
+                        {
+                                <a href="https://www.samsung.com/sec/" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://www.samsungcareers.com/hr/" target="_blank" class="btn btn-secondary">채용정보</a>
+                                
+                        }
+                        else if (item.No == 3)
+                        {
+                                <a href="https://www.hyundai.com/kr/ko/e" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://www.hyundai.co.kr/recruit/recruitMain" target="_blank" class="btn btn-secondary">채용정보</a>
+                                
+                        }
+                        else if (item.No == 4)
+                        {
+                                <a href="https://www.woowahan.com/" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://career.woowahan.com/?utm_source=google&utm_medium=sa&utm_campaign=career&utm_content=baemin&gclid=Cj0KCQjwgNanBhDUARIsAAeIcAt5kzeLHfRYJwo6WGiVVf_Fb_cThZy_koLJn7D-su8T6h4OMFScAp8aAkJ6EALw_wcB" target="_blank" class="btn btn-secondary">채용정보</a>
+                                
+                        }
+                        else if (item.No == 5)
+                        {
+                                <a href="https://www.skhynix.com/" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://recruit.skhynix.com/servlet/mnus_main.view" target="_blank" class="btn btn-secondary">채용정보</a>
+                                
+                        }
+                        else if (item.No == 6)
+                        {
+                                <a href="https://www.kakaocorp.com/page/" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://careers.kakao.com/index" target="_blank" class="btn btn-secondary">채용정보</a>
+                                
+                        }
+                        else if (item.No == 7)
+                        {
+                                <a href="https://home.kepco.co.kr/kepco/main.do" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://recruit.kepco.co.kr:444/frt/main.do" target="_blank" class="btn btn-secondary">채용정보</a>
+                                
+                        }
+                        else if (item.No == 8)
+                        {
+                                <a href="https://www.kia.com/kr" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://career.kia.com/main/main.kc" target="_blank" class="btn btn-secondary">채용정보</a>
+                                
+                        }
+                        else if (item.No == 9)
+                        {
+                                <a href="https://www.coupang.com/" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://www.coupang.jobs/kr/" target="_blank" class="btn btn-secondary">채용정보</a>
+                        }
+                               
+                        else if (item.No == 10)
+                        {
+                                <a href="https://www.nongshim.com/main/index" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://recruit.nongshim.com/recruit/notice/list" target="_blank" class="btn btn-secondary">채용정보</a>
+                                
+                        }
+                        else if (item.No == 11)
+                        {
+                                <a href="https://www.bing.co.kr/" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://recruit.bing.co.kr/app/web/main/index_new.jsp" target="_blank" class="btn btn-secondary">채용정보</a>
+                                
+                        }
+                       else if (item.No == 12)
+                        {
+                                <a href="https://www.apgroup.com/int/ko/" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://careers.apgroup.com/" target="_blank" class="btn btn-secondary">채용정보</a>
+                                
+                        }
+                        else if (item.No == 13)
+                        {
+                                <a href="https://toss.im/" target="_blank" class="btn btn-secondary">홈페이지</a>
+                                <a href="https://toss.im/career" target="_blank" class="btn btn-secondary">채용정보</a>
+                                
+                        }
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+</div>

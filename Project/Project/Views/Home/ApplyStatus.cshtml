@@ -1,0 +1,38 @@
+﻿@model IEnumerable<WebMiniProject.Models.Resume>
+
+<style>
+    h1 {
+        font-family: 'Hakgyoansim Wooju';
+        font-display: auto;
+        font-synthesis-style: auto;
+    }
+
+</style>
+<h1 class="fw-bolder text-primary text-center">나의 지원현황</h1>
+
+<table class="table table-striped table-bordered">
+    <thead class="thead-dark">
+        <tr>
+            <th>
+                기업
+            </th>
+            <th>
+                한줄 자기소개
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CorporationName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.OneLine)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

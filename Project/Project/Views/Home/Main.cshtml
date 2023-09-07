@@ -1,0 +1,181 @@
+﻿@{
+    ViewData["Title"] = "Main1";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Main Page</title>
+    <style>
+        /* 스타일을 직접 HTML 파일 내에 포함시킵니다. */
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        /* 왼쪽 섹션 (빨간색 배경) */
+        .section1 {
+            background-color: white; /* 빨간색 배경으로 수정 */
+            position: absolute;
+            top: 50;
+            left: 0;
+            width: 15%;
+            height: 100vh; /* 높이를 브라우저 높이에 맞게 설정 */
+            transition: top 0.5s;
+        }
+        /* 가운데 섹션 (파란색 배경) */
+        .section2 {
+            background-color: white; /* 파란색 배경으로 수정 */
+            position: absolute;
+            top: 50;
+            left: 15%;
+            width: 70%;
+            height: 100vh; /* 높이를 브라우저 높이에 맞게 설정 */
+        }
+        /* 오른쪽 섹션 (녹색 배경) */
+        .section3 {
+            background-color: white; /* 녹색 배경으로 수정 */
+            position: absolute;
+            top: 50;
+            left: 85%;
+            width: 15%;
+            height: 100vh; /* 높이를 브라우저 높이에 맞게 설정 */
+            transition: top 0.5s;
+        }
+        /* 나머지 스타일은 여기에 추가하세요. */
+        .center-align {
+            text-align: center;
+        }
+
+        .banner-container {
+            display: flex;
+            justify-content: center;
+        }
+
+            .banner-container img {
+                margin: 10px; /* 이미지 사이의 여백 조절 */
+                width: 300px;
+                height: 250px;
+                border-radius: 15px;
+            }
+
+            .banner-container img {
+                margin: 10px; /* 이미지 사이의 여백 조절 */
+                width: 300px;
+                height: 250px;
+                border-radius: 15px;
+            }
+
+            .banner-container .banner2 {
+                border: 2px solid #000; /* 테두리 스타일 및 색상 설정 */
+            }
+    </style>
+</head>
+<body>
+    <!-- 왼쪽 섹션 -->
+    <div class="section1">
+        <!-- 첫 번째 이미지 -->
+        <div class="image-container">
+            <img src="~/images/좌측1.gif" alt="Navigation Image" style="width: 250px; height: 600px; border-radius: 15px;">
+        </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <!-- 두 번째 이미지 -->
+        <div class="image-container">
+            <img src="~/images/좌측배너1.png" alt="navigation image" style="width: 250px; height: 600px; border-radius: 15px;">
+        </div>
+    </div>
+    <!--가운대 섹션-->
+    <div class="section2">
+        <!-- 메인 페이지의 내용을 추가하세요. -->
+        <div class="banner-container">
+            <img src="~/images/배너1.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 700px; height: 100px;">
+            <img id="banner2" src="@Url.Content("~/images/banner2.png")" alt="배너2" style="width: 300px; height: 100px; border: 2px solid #000; ">
+            <img src="~/images/배너3.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 100px;">
+        </div>
+        <br />
+        <br />
+        <p style="font-size: 24px; text-align: center; background-color: blue; color: white; padding: 10px; border-radius: 30px;">채용공고중인 기업</p>
+        <div class="center-align">
+            <a href="@Url.Action("Company1", "CRUD")" target="_blank">
+                <img src="/images/그림1-2.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 250px; border: 2px solid #000; border-radius: 15px; margin: 10px 5px;">
+            </a>
+            <a href="https://www.msit.go.kr/bbs/list.do?sCode=user&mPid=221&mId=126" target="_blank">
+                <img src="~/images/그림2-2.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 250px; border: 2px solid #000; border-radius: 15px; margin: 10px 5px;">
+            </a>
+            <a href="@Url.Action("Company3", "CRUD")" target="_blank">
+                <img src="~/images/그림3-2.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 250px; border: 2px solid #000; border-radius: 15px; margin: 10px 5px;">
+            </a>
+            <a href="https://osstem.recruiter.co.kr/app/jobnotice/list" target="_blank">
+                <img src="~/images/그림4-2.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 250px; border: 2px solid #000; border-radius: 15px; margin: 10px 5px;">
+            </a>
+            <a href="@Url.Action("Company5", "CRUD")" target="_blank">
+                <img src="~/images/그림5-2.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 250px; border: 2px solid #000; border-radius: 15px; margin: 10px 5px;">
+            </a>
+            <a href="@Url.Action("Company6", "CRUD")" target="_blank">
+                <img src="~/images/그림6-2.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 250px; border: 2px solid #000; border-radius: 15px; margin: 10px 5px;">
+            </a>
+            <a href="@Url.Action("Company7", "CRUD")" target="_blank">
+                <img src="~/images/그림7-2.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 250px; border: 2px solid #000; border-radius: 15px; margin: 10px 5px;">
+            </a>
+            <a href="@Url.Action("Company8", "CRUD")" target="_blank">
+                <img src="~/images/그림8-2.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 250px; border: 2px solid #000; border-radius: 15px; margin: 10px 5px;">
+            </a>
+            <a href="@Url.Action("Company9", "CRUD")" target="_blank">
+                <img src="~/images/그림9-2.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 250px; border: 2px solid #000; border-radius: 15px; margin: 10px 5px;">
+            </a>
+            <a href="@Url.Action("Company10", "CRUD")" target="_blank">
+                <img src="~/images/그림10-2.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 250px; border: 2px solid #000; border-radius: 15px; margin: 10px 5px;">
+            </a>
+            <a href="@Url.Action("Company11", "CRUD")" target="_blank">
+                <img src="~/images/그림11-2.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 250px; border: 2px solid #000; border-radius: 15px; margin: 10px 5px;">
+            </a>
+            <a href="https://osstem.recruiter.co.kr/app/jobnotice/list" target="_blank">
+                <img src="~/images/그림12-2.png" class="img-fluid" alt="ㅁㄴㅇㄹ" style="width: 300px; height: 250px; border: 2px solid #000; border-radius: 15px; margin: 10px 5px;">
+            </a>
+        </div>
+        <br />
+        <br />
+        <p style="font-size: 24px; text-align: center; background-color: limegreen; color: white; padding: 10px; border-radius: 30px;">채용관련 영상</p>
+        <div style="display: flex; justify-content: center;">
+            <iframe width="635" height="400" src="https://www.youtube.com/embed/YfigRC--mh0" frameborder="0" allowfullscreen></iframe>
+            <iframe width="635" height="400" src="https://www.youtube.com/embed/GkfAC_JHXU8" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+    <!-- 오른쪽 섹션. -->
+    <div class="section3">
+        <img src="~/images/우측배너1.png" class="img-fluid" alt="Navigation Image" style="width: 250px; height: 600px; border-radius: 15px; margin-top: 200px; margin-left: 20px;">
+    </div>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            var scrollY = window.scrollY;
+            var section1 = document.querySelector(".section1");
+            var section3 = document.querySelector(".section3");
+
+            section1.style.top = scrollY * 0.5 + "px";
+            section3.style.top = scrollY * 0.5 + "px";
+        });
+        var imageUrls = [
+            "@Url.Content("~/images/banner2.png")", // 기본 이미지
+            "@Url.Content("~/images/banner3.png")", // 새로운 이미지 1
+            "@Url.Content("~/images/banner4.png")", // 새로운 이미지 2
+            // 추가적인 이미지 URL을 여기에 추가
+        ];
+
+        var banner2 = document.getElementById("banner2");
+        var currentImageIndex = 0;
+
+        setInterval(function () {
+            currentImageIndex = (currentImageIndex + 1) % imageUrls.length;
+            banner2.src = imageUrls[currentImageIndex];
+        }, 5000); // 5초마다 이미지 변경 (단위: 밀리초)
+    </script>
+</body>
+</html>

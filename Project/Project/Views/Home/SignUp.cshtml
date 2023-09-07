@@ -1,0 +1,72 @@
+﻿@model User
+@{
+    ViewData["Title"] = "SignUP";
+}
+<style>
+    .form-signin {
+        width: 100%;
+        max-width: 330px;
+        padding: 15px;
+        margin: auto;
+    }
+
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+
+        .form-signin .form-floating:focus-within {
+            z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+</style>
+
+<body class="text-center">
+    <main class="form-signin">
+        <form asp-action="SignUP">
+            <h1 class="h3 mb-3 fw-normal">회원 가입</h1>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-floating">
+                <input asp-for="UserId" type="text" class="form-control" id="floatingInput" placeholder="아이디">
+                <label asp-for="UserId" for="floatingInput">아이디</label>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <input asp-for="UserPassword" type="password" class="form-control" id="floatingPassword" placeholder="비밀번호">
+                <label asp-for="UserPassword" for="floatingPassword">비밀번호</label>
+                <span asp-validation-for="UserPassword" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <input asp-for="UserName" class="form-control" id="floatingInput" placeholder="이름">
+                <label asp-for="UserName" for="floatinginput">이름</label>
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <input asp-for="UserGender" class="form-control" list="Gender" id="floatingInput" placeholder="성별">
+                <datalist id="Gender">
+                    <option value="남자"></option>
+                    <option value="여자"></option>
+                </datalist>
+                <label asp-for="UserGender" for="floatingInput">성별</label>
+                <span asp-validation-for="UserGender" class="text-danger"></span>
+            </div>
+            <div class="form-floating">
+                <input asp-for="UserHp" class="form-control" id="floatingInput" placeholder="전화번호">
+                <label asp-for="UserHp" for="floatingInput">전화번호</label>
+                <span asp-validation-for="UserHp" class="text-danger"></span>
+            </div>
+            <br />
+            <button class="w-100 btn btn-lg btn-primary" type="submit">가입하기</button>
+        </form>
+    </main>
+</body>
